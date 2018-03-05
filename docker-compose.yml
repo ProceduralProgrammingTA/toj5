@@ -13,3 +13,17 @@ services:
     volumes:
       - $PWD/docker/mysql/conf:/etc/mysql/conf.d
       - $TOJ_DB_FILE_PATH:/ver/lib/mysql
+  app:
+    privileged: true # for docker in docker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql
+    links:
+      - mysql:mysql
+    command: "bundle exec rails s"
+    tty: true
+    stdin_open: true
+    ports:
+      - 3000:3000
