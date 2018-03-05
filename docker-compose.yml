@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mysql:
+    container_name: $TOJ_DB_CONTAINER_NAME
+    ports:
+      - $TOJ_DB_PORT:3306
+    build:
+      context: $PWD/docker/mysql
+      dockerfile: Dockerfile
+    environment:
+      - MYSQL_ROOT_PASSWORD=$TOJ_DB_ROOT_PASSWORD
+      - MYSQL_DATABASE=$TOJ_DB_NAME
+    volumes:
+      - $PWD/docker/mysql/conf:/etc/mysql/conf.d
+      - $TOJ_DB_FILE_PATH:/ver/lib/mysql
