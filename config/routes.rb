@@ -4,4 +4,12 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create]
   get '/login', to: 'sessions#new'
   delete '/logout', to: 'sessions#destroy'
+
+  namespace :manage do
+    get '/', to: 'home#index'
+    resources :sessions, only: [:create]
+    get '/login', to: 'sessions#new'
+    delete '/logout', to: 'sessions#destroy'
+  end
+
 end

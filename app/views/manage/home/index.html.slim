@@ -1,0 +1,8 @@
+h1 管理者のページ
+- if current_admin.present?
+  h2 ようこそ
+  = button_to manage_logout_path, method: :delete do
+    | ログアウト
+- else
+  h2 ログインしてね
+  = link_to 'ログイン', manage_login_path

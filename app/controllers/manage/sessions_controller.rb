@@ -4,7 +4,7 @@ class Manage::SessionsController < ApplicationController
 
   def create
     admin = Admin.find_by(name: params[:name])
-    if student && student.authenticate(params[:password])
+    if admin && admin.authenticate(params[:password])
       session[:admin_id] = student.id
       redirect_to root_path
     else
