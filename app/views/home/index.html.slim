@@ -1,4 +1,7 @@
 - if current_student.present?
   h2 ようこそ
+  = button_to logout_path, method: :delete do
+    | ログアウト
 - else
   h2 ログインしてね
+  = link_to 'ログイン', login_path
