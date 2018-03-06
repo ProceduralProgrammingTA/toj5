@@ -1,2 +1,3 @@
 require 'students.schema'
 require 'admins.schema'
+require 'tasks.schema'
