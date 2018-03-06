@@ -12,7 +12,7 @@ services:
       - MYSQL_DATABASE=$TOJ_DB_NAME
     volumes:
       - $PWD/docker/mysql/conf:/etc/mysql/conf.d
-      - $TOJ_DB_FILE_PATH:/ver/lib/mysql
+      - $TOJ_DB_FILE_PATH:/var/lib/mysql
   app:
     privileged: true # for docker in docker
     build:
