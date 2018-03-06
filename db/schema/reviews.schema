@@ -6,3 +6,5 @@ create_table "reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET
   t.datetime "created_at",     null: false
   t.datetime "updated_at",     null: false
 end
+
+add_index "reviews", ["student_id", "task_id"], name: "idx_unique_user_task", unique: true, using: :btree
