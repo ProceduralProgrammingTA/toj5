@@ -1,2 +1,5 @@
 require 'students.schema'
 require 'admins.schema'
+require 'tasks.schema'
+require 'reviews.schema'
+require 'submissions.schema'
