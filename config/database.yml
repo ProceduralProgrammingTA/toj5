@@ -8,8 +8,7 @@ development:
   database: tojdb
   username: root
   password: root
-  # host: localhost
-  host: 172.18.0.2
+  host: mysql
   port: 3306
 
 # Warning: The database defined as "test" will be erased and
