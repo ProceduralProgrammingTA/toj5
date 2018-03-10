@@ -2,6 +2,7 @@ version: '3'
 services:
   mysql:
     container_name: $TOJ_DB_CONTAINER_NAME
+    env_file: .env
     ports:
       - $TOJ_DB_PORT:3306
     build:
@@ -15,6 +16,7 @@ services:
       - $TOJ_DB_FILE_PATH:/var/lib/mysql
   app:
     privileged: true # for docker in docker
+    env_file: .env
     build:
       context: .
       dockerfile: Dockerfile
