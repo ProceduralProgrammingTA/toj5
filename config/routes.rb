@@ -7,9 +7,12 @@ Rails.application.routes.draw do
 
   namespace :manage do
     get '/', to: 'home#index'
+
     resources :sessions, only: [:create]
     get '/login', to: 'sessions#new'
     delete '/logout', to: 'sessions#destroy'
+
+    resources :tasks
   end
 
 end
