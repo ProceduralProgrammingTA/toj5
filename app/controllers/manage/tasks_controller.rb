@@ -7,7 +7,6 @@ class Manage::TasksController < ApplicationController
 
   def create
     @task = Task.new(@task_params)
-    # transaction を考える
   end
 
   def index
